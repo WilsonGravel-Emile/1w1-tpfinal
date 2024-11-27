@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/script.js" defer></script>
     <title>Tp-final de Emile</title>
+    <!-- !!!!!!!!!!!!!! DEMANDÉ AUX PROF SI J'AI BESOIN DES DIVS OU UN ALTERNATIF !!!!!!!!!! -->
   </head>
   <body>
     <header>
@@ -16,7 +17,7 @@
             Les Requins, Leurs beautés et leurs importances dans l'environement
           </h1>
           <!-- Hero banner -->
-          <nav>
+          <nav id="Accueil">
             <ul>
               <li>
                 <a href="#">Accueil</a>
@@ -56,10 +57,13 @@
                     >
                   </li>
                   <li>
-                      <a href="https://www.sciencepresse.qc.ca/actualite/detecteur-rumeurs/2021/09/24/requin-dangereux-pour-humain-plutot-faux"
-                       target="_blank">
-                      Articles sur les attaques des requins</a>
-                    </li>
+                    <a
+                      href="https://www.sciencepresse.qc.ca/actualite/detecteur-rumeurs/2021/09/24/requin-dangereux-pour-humain-plutot-faux"
+                      target="_blank"
+                    >
+                      Articles sur les attaques des requins</a
+                    >
+                  </li>
                   <!-- et sûrement plus -->
                 </ul>
               </li>
@@ -125,7 +129,7 @@
         <figure>
           <img
             src="assets/image/pexels-mile-ribeiro-6930033-6497794.jpg"
-            alt="requin bllanc mange"
+            alt="requin blanc mange"
           />
           <figcaption>Un requin blanc</figcaption>
         </figure>
@@ -150,26 +154,62 @@
             est brouillée : il y a beaucoup de vagues et généralement de la
             pluie.
           </p>
-          <h3>Est-ce que  les requins aimes nous mangé?</h3>
-          <p>La réponse est simple non! Parce que que Comparativement au
-            phoque, il est possible que nous soyons trop peu nutritifs à son
-            goût. Le phoque, avec la couche de gras qui le garde bien au chaud,
-            constitue un repas de choix. Une alimentation riche en gras permet
-            au requin de maintenir sa température corporelle dans les
-            profondeurs océaniques.</p>
+          <h3>Est-ce que les requins aimes nous mangé?</h3>
+          <p>
+            La réponse est simple non! Parce que que Comparativement au phoque,
+            il est possible que nous soyons trop peu nutritifs à son goût. Le
+            phoque, avec la couche de gras qui le garde bien au chaud, constitue
+            un repas de choix. Une alimentation riche en gras permet au requin
+            de maintenir sa température corporelle dans les profondeurs
+            océaniques.
+          </p>
         </div>
         <table>
-          <thead></thead>
-          <tbody></tbody>
-          <tfoot></tfoot>
+          <caption>
+            Le nombre de décès causés par des Animaux par Années dans le monde
+
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Animaux</th>
+              <th scope="col">Nombres de décès</th>
+              <th scope="col">Nombres de blessés</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Requins</th>
+              <td>7 - 10</td>
+              <td>69</td>
+            </tr>
+            <tr>
+              <th scope="row">Crocodiles</th>
+              <td>300</td>
+              <td>400 - 600</td>
+            </tr>            
+            <tr>
+              <th scope="row"> Réduves/Tiques</th>
+              <td>652</td>
+              <td>plus que 10000</td>
+            </tr>
+            <tr>
+              <th scope="row">Serpents</th>
+              <td>81410 à 137880</td>
+              <td>environ 5million</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Hippopotames</th>
+              <td>300 à 3000</td>
+              <td>Pas d'info</td>
+            </tr>
+            <tr>
+              <th scope="row">Moustiques</th>
+              <td>1million</td>
+              <td>Pas info</td>
+            </tr>
+          </tbody>
         </table>
-        <figure>
-          <img
-            src="assets/image/Stats.png"
-            alt="Graphe sur le nombre de mort causés pas différentes espèces"
-          />
-          <figcaption>Graphes décès humain</figcaption>
-        </figure>
       </section>
       <form></form>
       <section id="galerie-image"></section>
@@ -179,7 +219,8 @@
         <h2>Credits & conclusion</h2>
         <p>
           Les requins sont beaux, important à l'écosystème de l'océan et ne sont
-          pas des mangeurs, mais des prédateurs!
+          pas des mangeurs, mais des prédateurs! Merci d'avoir visité ma première réel page web. 
+          Projets Final de 1w1 fait par Emile Lucas Wilson
         </p>
         <div></div>
         <h3>Credits à</h3>
@@ -190,9 +231,12 @@
             <li>One Earth</li>
             <li>Shark Trust</li>
             <li>Agence science presse QC</li>
+            <li>Radio-Canada</li>
+            <li><a href="#Accueil">Revenir à le Haut de page!</a></li>
           </ul>
         </nav>
       </section>
+      <!-- Demandé au prof si la galerie d'image peut être un background -->
     </footer>
   </body>
 </html>
