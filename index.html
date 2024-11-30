@@ -7,27 +7,28 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/script.js" defer></script>
     <title>Tp-final de Emile</title>
-    <!-- !!!!!!!!!!!!!! DEMANDÉ AUX PROF SI J'AI BESOIN DES DIVS OU UN ALTERNATIF !!!!!!!!!! -->
   </head>
   <body>
     <header>
-      <section class="hero-banner">
-        <section class="hero-text">
+        <section class="hero">
+          <div>
+          <img src="assets/image/shark.png" alt="petit icone de requin">
           <h1>
             Les Requins, Leurs beautés et leurs importances dans l'environement
           </h1>
+         </div>
           <!-- Hero banner -->
           <nav id="Accueil">
             <ul>
               <li>
-                <a href="#">Accueil</a>
+                <a href="#">ACCUEIL</a>
                 <ul class="sous-menu">
                   <!-- demander au prof des meilleurs nom pour les liens -->
                   <li><a href="#beaute">Le top du main </a></li>
                   <li><a href="#impact">L'impact sur l'environement</a></li>
                   <li>
                     <a href="#man-eater"
-                      >Le nombre de mort causés par les Requins</a
+                      >Les dangers</a
                     >
                   </li>
                   <li><a href="#galerie-image">La galerie d'image</a></li>
@@ -35,25 +36,25 @@
                 </ul>
               </li>
               <li>
-                <a href="#">Sources</a>
+                <a href="#">SOURCES</a>
                 <ul class="sous-menu">
                   <li>
                     <a
                       href="https://www.youtube.com/watch?v=2FdoZnyljFs"
                       target="_blank"
-                      >AVNJ - Sharks are not monster video</a
+                      >AVNJ - youtube</a
                     >
                   </li>
                   <li>
                     <a href="https://geerg.ca/" target="_blank"
-                      >Plus d'info sur les requins du Québec</a
+                      >GEERG - QC</a
                     >
                   </li>
                   <li>
                     <a
                       href="https://www-oneearth-org.translate.goog/why-sharks-are-essential-for-healthy-oceans/?_x_tr_sl=en&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=rq"
                       target="_blank"
-                      >Article source</a
+                      >One Earth</a
                     >
                   </li>
                   <li>
@@ -61,7 +62,7 @@
                       href="https://www.sciencepresse.qc.ca/actualite/detecteur-rumeurs/2021/09/24/requin-dangereux-pour-humain-plutot-faux"
                       target="_blank"
                     >
-                      Articles sur les attaques des requins</a
+                      Sciencepresse - QC</a
                     >
                   </li>
                   <!-- et sûrement plus -->
@@ -71,14 +72,13 @@
                 <a
                   href="https://www.paulandshark.com/fr/shark-world/save-the-sea/shark-trust/"
                   target="_blank"
-                  >comment aider</a
+                  >COMMENT AIDER</a
                 >
               </li>
               <!-- plus de vidéo -->
             </ul>
           </nav>
         </section>
-      </section>
     </header>
     <main>
       <!-- à coté de la figure -->
@@ -131,7 +131,7 @@
             src="assets/image/pexels-mile-ribeiro-6930033-6497794.jpg"
             alt="requin blanc mange"
           />
-          <figcaption>Un requin blanc</figcaption>
+          <figcaption>Un grand requin blanc</figcaption>
         </figure>
         <div>
           <h2>Ils ne sont pas des mangeurs d'humains!</h2>
@@ -211,7 +211,113 @@
           </tbody>
         </table>
       </section>
-      <form></form>
+      <div class="btn-group">
+        <button>Répondre au formulaire</button>
+      </div>
+      <form action="+" class="invisible">
+        <section class="">
+          <h2>Information personnelles</h2>
+          <div class="input-group">
+            <label for="nom">Votre Nom</label>
+            <input type="text" name="nom" id="nom" required maxlength="200" />
+          </div>
+          <div class="input-group">
+            <label for="prenom">Votre prénom</label>
+            <input
+              type="text"
+              name="prenom"
+              id="prenom"
+              required
+              maxlength="200"
+            />
+          </div>
+  
+          <div class="input-group">
+            <label for="courriel">Votre courriel</label>
+            <input
+              type="email"
+              name="courriel"
+              id="courriel"
+              required
+              maxlength="200"
+            />
+            </div>
+
+          <div class="input-group">
+            <label for="motDePasse">Un mot de passe</label>
+            <input
+              type="password"
+              name="motDePasse"
+              id="motDePasse"
+              required
+              minlength="8"
+              maxlength="200"
+            />
+          </div>
+          <div class="input-group-genre">
+            <p>Votre genre</p>
+            <label for="choix-1">Homme</label>
+            <input type="radio" name="choix" id="choix-1" value="choix-1" />
+            <label for="choix-2">Femme</label>
+            <input type="radio" name="choix" id="choix-2" value="choix-2" />
+            <label for="choix-3">Autres</label>
+            <input type="radio" name="choix" id="choix-3" value="choix-3">
+          </div>
+  
+          </div>  
+          <div class="input-group">
+            <label for="age">Votre date de naissance</label>
+            <input
+              type="date"
+              name="age"
+              id="age"
+              step="1"
+            />
+          </div>
+         </section>
+         <section>
+          <h2>Information général</h2>
+          <div class="input-group">
+          <div class="input-group">
+            <label for="liste">Comment avez-vous entendu parler de nous?</label>
+            <select name="liste" id="liste">
+              <option value="1">Moteur de recherche</option>
+              <option value="2">Réseaux sociaux</option>
+              <option value="3">Bouche à oreille</option>
+              <option value="4">Autres</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="commentaires">Autres Informations pertinantes</label>
+            <textarea
+              name="commentaires"
+              id="commentaires"
+              maxlength="2000"
+              minlength="50"
+              rows="10"
+              cols="100"
+            ></textarea>
+          </div>
+            <div class="input-group">
+            <label for="categorie-1">Voulez-vous abonner à l'infolettre</label>
+            <input
+              type="checkbox"
+              name="categorie-1"
+              id="categorie-1"
+              value="categorie-1"
+              required
+            />
+          </div>
+         </section>
+         <section class="btn-forms">
+          <div class="reset-group">
+            <input type="reset" />
+          </div>
+          <div class="submit">
+            <input type="submit" />
+          </div>
+         </section>
+      </form>
       <section id="galerie-image"></section>
     </main>
     <footer>

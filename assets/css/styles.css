@@ -1,6 +1,190 @@
 @import url("./reset.css");
 
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap");
+:root {
+  --couleur-background: #003f86;
+  --couleur-secondairebgd: #a1e9ff;
+  --couleur-bgd-boite: hwb(194 66% 0% / 0.521);
+  --couleur-accent: #009efa;
+  --couleur-principal-font: #2f4958;
+  --couleur-border: #00b884;
+  --couleur-valid: #009efa;
+  --couleur-invalid: rgb(204, 48, 0);
+  --couleur-hover: #103b99;
+  --couleur-lien: #ffffff;
+  --couleur-titre: #0477ac;
+  --couleur-highlight: #0086d3;
+
+  --titre-font: "Playwrite NZ", cursive;
+  --principal-font: "Roboto Condensed", sans-serif;
+  --font-lien: "Roboto Slab", serif;
+  --espacement-lg: 1.25rem;
+  --espacement-md: 1rem;
+  --espacement-sm: 0.5rem;
+  --espacement-xl: 1.5rem;
+  --espacement-xxl: 3rem;
+  --espacement-xxxl: 5rem;
+  --police-principale: ;
+  --texte-lg: 1.75rem;
+  --texte-md: 1.15rem;
+  --texte-sm: 0.75rem;
+  --texte-xl: 2.5rem;
+  --texte-xxl: 4rem;
+}
+/* Demandé au prof la flèche en bas, FINIS LE MAIN, AJOUT DE SCROLL TYPE, PUIS le hero faut qu'il se déplace!!! */
 html,
-body{
-    padding: 1rem;
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--couleur-secondairebgd) 30%,
+    var(--couleur-background) 60%,
+    var(--couleur-background) 100%
+  );
+  font-family: var(--principal-font);
+  backdrop-filter: blur(20px);
+}
+header,
+main,
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 70vw;
+}
+main,
+footer {
+  padding: 8rem;
+}
+
+h1 {
+  font-size: var(--texte-xl);
+  color: var(--couleur-titre);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--titre-font);
+  font-weight: 500;
+}
+a {
+  font-family: var(--font-lien);
+  color: var(--couleur-lien);
+  text-decoration: none;
+}
+a:visited {
+  color: none;
+}
+img {
+  max-width: 100%;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--couleur-bgd-boite);
+  min-height: 90vh;
+}
+header .hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.308), rgba(0, 0, 0, 0.5)),
+    url("../image/GEERG_13.jpg");
+  height: 90vh;
+  width: 100%;
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  z-index: 100; */
+}
+header .hero div {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(
+    rgba(219, 219, 219, 0.788),
+    rgba(219, 219, 219, 0.788)
+  );
+  max-width: 45%;
+  max-height: 20%;
+}
+
+header .hero div img {
+  width: 100px;
+  height: 100px;
+  /* Va disparaître après 60% du parent */
+}
+header .hero nav {
+  /* À 65% parent il va être flex column */
+  width: 55%;
+  max-height: 20%;
+  min-width: 45%;
+  background: linear-gradient(
+    rgba(219, 219, 219, 0.788),
+    rgba(219, 219, 219, 0.788)
+  );
+  /* Utiliser padding car je n'arrive pas joué avec le align */
+}
+header .hero nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+  padding: 4rem;
+}
+/* Style de sous menu et transition !!! */
+header .hero nav ul li {
+  position: relative;
+}
+header .hero nav ul li .sous-menu {
+  display: none;
+  background-color: var(--couleur-hover);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 1rem;
+  z-index: 1;
+}
+
+header .hero nav ul li .sous-menu li{
+    padding: 1rem 4rem 1rem  4rem;
+    transition: all 700ms ease;
+}
+header .hero nav ul li:hover .sous-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+header .hero nav ul li:hover .sous-menu li a{
+    font-size: var(--texte-md);
+    font-weight: 400;
+}
+header .hero nav ul li .sous-menu li:hover{
+background-color: var(--couleur-secondairebgd);
+}
+/* Style des lien du header */
+
+header .hero ul li a{
+    font-size: var(--texte-lg);
+    font-weight: 600;
+}
+main {
+  display: flex;
+  background-color: var(--couleur-bgd-boite);
+}
+footer {
+  background-color: var(--couleur-bgd-boite);
+}
+
+.invisible {
+  display: none;
 }
