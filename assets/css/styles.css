@@ -15,7 +15,7 @@
   --couleur-hover: #103b99;
   --couleur-lien: #ffffff;
   --couleur-titre: #0477ac;
-  --couleur-highlight: #0086d3;
+  --couleur-highlight: #4fbeff;
 
   --titre-font: "Playwrite NZ", cursive;
   --principal-font: "Roboto Condensed", sans-serif;
@@ -169,7 +169,7 @@ header .hero nav ul li:hover .sous-menu li a{
     font-weight: 400;
 }
 header .hero nav ul li .sous-menu li:hover{
-background-color: var(--couleur-secondairebgd);
+background-color: var(--couleur-highlight);
 }
 /* Style des lien du header */
 
