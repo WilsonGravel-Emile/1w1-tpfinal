@@ -8,7 +8,7 @@
   --couleur-secondairebgd: #a1e9ff;
   --couleur-bgd-boite: hwb(194 66% 0% / 0.521);
   --couleur-accent: #009efa;
-  --couleur-principal-font: #2f4958;
+  --couleur-principal-font: #3a464d;
   --couleur-border: #00b884;
   --couleur-valid: #009efa;
   --couleur-invalid: rgb(204, 48, 0);
@@ -94,6 +94,13 @@ p {
   font-size: var(--texte-md);
   font-family: var(--police-principale);
   letter-spacing: 1px;
+  color: var(--couleur-principal-font);
+}
+article{
+  scroll-snap-align: start;  
+}
+section{
+  scroll-snap-align: start;
 }
 header {
   display: flex;
@@ -138,7 +145,7 @@ header .hero nav div {
   display: flex;
   justify-content: center;
   padding: 1.5rem;
-  width: 45%;
+  width: 50%;
 }
 
 header .hero nav div img {
@@ -166,6 +173,7 @@ header .hero nav ul li .sous-menu {
   left: 0;
   padding: 1rem;
   z-index: 1;
+  transition: all 350ms ease;
 }
 
 header .hero nav ul li .sous-menu li{
@@ -193,6 +201,7 @@ header .hero ul li a{
 main {
   display: flex;
   background-color: var(--couleur-bgd-boite);
+  gap: 12rem;
 }
 main #beaute{
   display: flex;
@@ -203,7 +212,7 @@ main #beaute{
     rgba(255, 255, 255, 0.750),
     rgba(219, 219, 219, 0.750)
   );
-  padding: 1rem;
+  padding: 2rem;
 }
 main #beaute div{
   display: flex;
@@ -211,6 +220,7 @@ main #beaute div{
   flex-direction: column;
   width: 25%;
   max-height: 100%;
+  gap: 2rem;
 }
 main #beaute div h2{
   font-size: var(--texte-lg);
@@ -219,12 +229,68 @@ main #beaute figure img{
   max-width: 95%;
   max-height: 100%;
 }
-section{
-  scroll-snap-align: center;
+main #impact{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  min-height: 80vh;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.750),
+    rgba(219, 219, 219, 0.750)
+  );
+  padding: 2rem;
+  justify-content: space-between;
 }
+
+main #impact div{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 35%;
+  max-height: 100%;
+  gap: 2rem;
+}
+main #impact div p{
+  letter-spacing: 1px;
+} 
+main #impact figure img{
+  width: 100%;
+}
+main #man-eater{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.750),
+    rgba(219, 219, 219, 0.750)
+  );
+  padding: 2rem;
+  justify-content: space-between;
+}
+main #man-eater section{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 2rem;
+}
+
 footer {
   background-color: var(--couleur-bgd-boite);
   scroll-snap-align: end;
+}
+/* Demander au prof si il y a un meilleur alternatif */
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .invisible {
