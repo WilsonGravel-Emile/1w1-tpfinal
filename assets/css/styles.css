@@ -273,6 +273,7 @@ main #man-eater section{
   flex-wrap: nowrap;
   flex-direction: row;
   gap: 2rem;
+  scroll-snap-align: none;
 }
 
 footer {
