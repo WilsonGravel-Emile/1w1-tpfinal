@@ -12,10 +12,12 @@
   --couleur-border: #00b884;
   --couleur-valid: #009efa;
   --couleur-invalid: rgb(204, 48, 0);
-  --couleur-hover: #103b99;
+  --couleur-hover: #1d526b;
   --couleur-lien: #ffffff;
-  --couleur-titre: #0477ac;
+  --couleur-titre: #c3ecff;
+  --couleur-soustitre: #0477ac;; 
   --couleur-highlight: #4fbeff;
+  --couleur-footer: rgb(118, 219, 245);
 
   --titre-font: "Playwrite NZ", cursive;
   --principal-font: "Roboto Condensed", sans-serif;
@@ -26,10 +28,10 @@
   --espacement-xl: 1.5rem;
   --espacement-xxl: 3rem;
   --espacement-xxxl: 5rem;
-  --police-principale: ;
-  --texte-lg: 1.75rem;
-  --texte-md: 1.15rem;
-  --texte-sm: 0.75rem;
+  --texte-lg: 2rem;
+  --texte-md: 1.25rem;
+  --texte-h3: 1.5rem;
+  --texte-sm: 1rem;
   --texte-xl: 2.5rem;
   --texte-xxl: 4rem;
 }
@@ -66,18 +68,31 @@ h1 {
   font-size: var(--texte-xl);
   color: var(--couleur-titre);
 }
-h2{
-  font-size: var(--texte-lg);
-  color: var(--couleur-titre);
-  padding: 1rem;
-  padding-left: 0;
-  padding-top: 0;
+h2 {  
+  font-size: var(--texte-lg);  
+
+}
+h3{
+  font-size: var(--texte-h3);
+
 }
 h1,
 h2,
 h3 {
   font-family: var(--titre-font);
   font-weight: 500;
+  padding: 1rem;
+  padding-left: 0;
+  padding-top: 0;;
+
+}
+h2,
+h3{
+  color: var(--couleur-soustitre);
+}
+li{  font-family: var(--font-lien);
+  color: var(--couleur-footer);
+  text-decoration: none;
 }
 a {
   font-family: var(--font-lien);
@@ -86,6 +101,7 @@ a {
 }
 a:visited {
   color: none;
+  /* demandé au prof un alternatif */
 }
 img {
   max-width: 100%;
@@ -96,12 +112,57 @@ p {
   letter-spacing: 1px;
   color: var(--couleur-principal-font);
 }
-article{
-  scroll-snap-align: start;  
-}
-section{
+article {
   scroll-snap-align: start;
 }
+section {
+  scroll-snap-align: start;
+}
+table {
+  border-collapse: collapse;
+  border: 2px solid #1d526b;
+  font-family: var(--principal-font);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  min-height: 60vh;
+  scroll-snap-align: start;
+}
+
+caption {
+  caption-side: top;
+  padding: 2rem;
+  font-weight: bold;
+  font-family: var(--titre-font);
+  color: var(--couleur-soustitre);
+  font-size: var(--texte-h3);
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+thead tr{
+  font-size: var(--texte-md);
+}
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: center;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -125,14 +186,11 @@ header .hero {
 }
 
 header .hero nav {
-  /* À 65% parent il va être flex column */
+  /*Demandé au prof si je suis obligé d'avoir un menu fixe */
   display: flex;
   max-height: 20%;
-  max-width: 100%;
-  background: linear-gradient(
-    rgba(219, 219, 219, 0.788),
-    rgba(219, 219, 219, 0.788)
-  );
+  min-width: 100%;
+  background: linear-gradient(#1d526bb0, #1d526bb0);
   position: sticky;
   left: 0;
   right: 0;
@@ -149,8 +207,8 @@ header .hero nav div {
 }
 
 header .hero nav div img {
-  width: 100px;
-  height: 100px;
+  width: 25%;
+  height: 100%;
   /* Va disparaître après 60% du parent */
 }
 header .hero nav ul {
@@ -171,50 +229,50 @@ header .hero nav ul li .sous-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  padding: 1rem;
+  padding: 2rem;
   z-index: 1;
   transition: all 350ms ease;
 }
 
-header .hero nav ul li .sous-menu li{
-    padding: 1rem 4rem 1rem  4rem;
-    transition: all 700ms ease;
+header .hero nav ul li .sous-menu li {
+  padding: 1rem 4rem 1rem 4rem;
+  transition: all 700ms ease;
 }
 header .hero nav ul li:hover .sous-menu {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-header .hero nav ul li:hover .sous-menu li a{
-    font-size: var(--texte-md);
-    font-weight: 400;
+header .hero nav ul li:hover .sous-menu li a {
+  font-size: var(--texte-md);
+  font-weight: 400;
 }
-header .hero nav ul li .sous-menu li:hover{
-background-color: var(--couleur-highlight);
+header .hero nav ul li .sous-menu li:hover {
+  background-color: var(--couleur-highlight);
 }
 /* Style des lien du header */
 
-header .hero ul li a{
-    font-size: var(--texte-lg);
-    font-weight: 600;
+header .hero ul li a {
+  font-size: var(--texte-lg);
+  font-weight: 600;
 }
 main {
   display: flex;
   background-color: var(--couleur-bgd-boite);
   gap: 12rem;
 }
-main #beaute{
+main #beaute {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   max-height: 100vh;
   background: linear-gradient(
-    rgba(255, 255, 255, 0.750),
-    rgba(219, 219, 219, 0.750)
+    rgba(255, 255, 255, 0.75),
+    rgba(219, 219, 219, 0.75)
   );
   padding: 2rem;
 }
-main #beaute div{
+main #beaute div {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -222,27 +280,24 @@ main #beaute div{
   max-height: 100%;
   gap: 2rem;
 }
-main #beaute div h2{
-  font-size: var(--texte-lg);
-}
-main #beaute figure img{
+main #beaute figure img {
   max-width: 95%;
   max-height: 100%;
 }
-main #impact{
+main #impact {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   min-height: 80vh;
   background: linear-gradient(
-    rgba(255, 255, 255, 0.750),
-    rgba(219, 219, 219, 0.750)
+    rgba(255, 255, 255, 0.75),
+    rgba(219, 219, 219, 0.75)
   );
   padding: 2rem;
   justify-content: space-between;
 }
 
-main #impact div{
+main #impact div {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -250,36 +305,159 @@ main #impact div{
   max-height: 100%;
   gap: 2rem;
 }
-main #impact div p{
+main #impact div p {
   letter-spacing: 1px;
-} 
-main #impact figure img{
+}
+main #impact figure {
+  width: 60%;
+}
+main #impact figure img {
   width: 100%;
 }
-main #man-eater{
+main #man-eater {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   min-height: 100vh;
   background: linear-gradient(
-    rgba(255, 255, 255, 0.750),
-    rgba(219, 219, 219, 0.750)
+    rgba(255, 255, 255, 0.75),
+    rgba(219, 219, 219, 0.75)
   );
   padding: 2rem;
   justify-content: space-between;
+  gap: 5rem;
 }
-main #man-eater section{
+main #man-eater section:first-child {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   gap: 2rem;
   scroll-snap-align: none;
 }
-
-footer {
-  background-color: var(--couleur-bgd-boite);
-  scroll-snap-align: end;
+main #man-eater section:first-child figure{
+  width: 100%;
 }
+main #man-eater section:first-child figure img{
+  width: 100%;
+}
+main #man-eater section:first-child div{
+  width: 45%;
+}
+main #man-eater #video{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin: 0 auto;
+  background-color: rgb(137, 231, 255);
+  border: 2px solid var(--couleur-hover);
+  padding: 2rem;
+  accent-color: var(--couleur-accent);
+  border-radius: 25px;
+}
+
+form section {
+  padding: 1rem;
+}
+
+form .input-group {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+form .input-group-genre{
+  padding: 0.5rem;
+
+}
+form .input-group-genre label{
+  padding-right: 2rem;
+}
+form label{
+  color: var(--couleur-principale-font);
+}
+form input,
+form textarea,
+form select {
+  border: 2px solid var(--couleur-case);
+  width: 5;
+  border-radius: 25px;
+
+  padding: 0.5rem;
+  accent-color: var(--couleur-case);
+}
+
+form input:focus {
+  border: 3px solid var(--couleur-principale-font);
+  outline: none;
+}
+form input:invalid {
+  color: var(--couleur-invalide);
+  border: 2px solid var(--couleur-invalid);
+}
+
+form input:invalid + .message-erreur {
+  display: block;
+}
+form input:valid {
+  color: var(--couleur-valid);
+  border: 2px solid var(--couleur-valid);
+}
+form .btn-group{
+  display: flex;
+  padding: 1rem;
+  gap: 16rem;
+}
+
+form .btn-group div input{
+  padding: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+footer {
+  background: linear-gradient(#1d526bb0, #1d526bb0);
+  scroll-snap-align: end;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+footer  h2{
+  color: #a1e9ff;
+  padding: 2rem;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+footer h3{
+  color: #a1e9ff;
+  padding: 2rem;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+footer p{
+  color: var(--couleur-footer);
+  justify-content: center;
+  display: flex;
+}
+footer nav{
+  padding: 4rem;
+  padding-top: 0;
+}
+footer nav ul li{
+  font-size: var(--texte-md);
+}
+nav{
+  display: flex;
+  justify-content: center;
+}
+
 /* Demander au prof si il y a un meilleur alternatif */
 .arrow {
   border: solid white;
@@ -296,4 +474,9 @@ footer {
 
 .invisible {
   display: none;
+}
+.separation{
+  width: 100%;
+  height: 2px;
+  background-color: var(--couleur-border);
 }
