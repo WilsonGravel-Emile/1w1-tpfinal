@@ -36,6 +36,7 @@
   --texte-xxl: 4rem;
 }
 /* Demandé au prof la flèche en bas, FINIS LE MAIN, DEMANDÉ à Maxime comment bien utilisé le scroll type */
+/* Demandé au prof la position fixed */
 html,
 body {
   background: linear-gradient(
@@ -44,10 +45,9 @@ body {
     var(--couleur-background) 60%,
     var(--couleur-background) 100%
   );
-  font-family: var(--principal-font);
-  backdrop-filter: blur(20px);
-  scroll-behavior: smooth;
+  font-family: var(--principal-font);  
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 header,
 main,
@@ -58,6 +58,7 @@ footer {
   align-items: center;
   gap: 1rem;
   min-width: 70vw;
+
 }
 main,
 footer {
@@ -65,7 +66,7 @@ footer {
 }
 
 h1 {
-  font-size: var(--texte-xl);
+  font-size: var(--texte-lg);
   color: var(--couleur-titre);
 }
 h2 {  
@@ -105,6 +106,7 @@ a:visited {
 }
 img {
   max-width: 100%;
+  max-height: 100%
 }
 p {
   font-size: var(--texte-md);
@@ -113,10 +115,10 @@ p {
   color: var(--couleur-principal-font);
 }
 article {
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 }
-section {
-  scroll-snap-align: start;
+section:not(#video){
+  scroll-snap-align: end;
 }
 table {
   border-collapse: collapse;
@@ -125,7 +127,7 @@ table {
   font-size: 1rem;
   letter-spacing: 1px;
   min-height: 60vh;
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 }
 
 caption {
@@ -171,7 +173,7 @@ header {
   min-height: 90vh;
   scroll-snap-align: start;
 }
-header .hero {
+header>.hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.308), rgba(0, 0, 0, 0.5)),
     url("../image/GEERG_13.jpg");
   height: 90vh;
@@ -185,13 +187,14 @@ header .hero {
   /*  */
 }
 
-header .hero nav {
+header>.hero>nav {
   /*Demandé au prof si je suis obligé d'avoir un menu fixe */
   display: flex;
-  max-height: 20%;
+  max-height: 15%;
   min-width: 100%;
+  width: 100%;
   background: linear-gradient(#1d526bb0, #1d526bb0);
-  position: sticky;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -199,19 +202,26 @@ header .hero nav {
   z-index: 100;
   /* Utiliser padding car je n'arrive pas joué avec le align */
 }
-header .hero nav div {
+header>.hero>nav>div {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 1.5rem;
   width: 50%;
+  gap:1rem;
 }
-
-header .hero nav div img {
-  width: 25%;
+header>.hero>nav>div>div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+}
+header>.hero>nav>div>div>img {
+  width: 100%;
   height: 100%;
   /* Va disparaître après 60% du parent */
 }
-header .hero nav ul {
+header>.hero>nav>ul {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -220,10 +230,10 @@ header .hero nav ul {
   gap: 10rem;
 }
 /* Style de sous menu et transition !!! */
-header .hero nav ul li {
+header>.hero>nav>ul>li {
   position: relative;
 }
-header .hero nav ul li .sous-menu {
+header>.hero>nav>ul>li>.sous-menu {
   display: none;
   background-color: var(--couleur-hover);
   position: absolute;
@@ -234,25 +244,25 @@ header .hero nav ul li .sous-menu {
   transition: all 350ms ease;
 }
 
-header .hero nav ul li .sous-menu li {
+header>.hero>nav>ul>li>.sous-menu>li {
   padding: 1rem 4rem 1rem 4rem;
   transition: all 700ms ease;
 }
-header .hero nav ul li:hover .sous-menu {
+header>.hero>nav ul>li:hover>.sous-menu {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-header .hero nav ul li:hover .sous-menu li a {
+header>.hero>nav>ul>li:hover>.sous-menu>li>a {
   font-size: var(--texte-md);
   font-weight: 400;
 }
-header .hero nav ul li .sous-menu li:hover {
+header>.hero>nav>ul>li>.sous-menu>li:hover {
   background-color: var(--couleur-highlight);
 }
 /* Style des lien du header */
 
-header .hero ul li a {
+header>.hero>nav>ul>li>a {
   font-size: var(--texte-lg);
   font-weight: 600;
 }
@@ -261,7 +271,7 @@ main {
   background-color: var(--couleur-bgd-boite);
   gap: 12rem;
 }
-main #beaute {
+main>#beaute {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -272,7 +282,7 @@ main #beaute {
   );
   padding: 2rem;
 }
-main #beaute div {
+main>#beaute>div {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -280,11 +290,11 @@ main #beaute div {
   max-height: 100%;
   gap: 2rem;
 }
-main #beaute figure img {
+main>#beaute>figure>img {
   max-width: 95%;
   max-height: 100%;
 }
-main #impact {
+main>#impact {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -297,7 +307,7 @@ main #impact {
   justify-content: space-between;
 }
 
-main #impact div {
+main>#impact>div {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -305,16 +315,16 @@ main #impact div {
   max-height: 100%;
   gap: 2rem;
 }
-main #impact div p {
+main>#impact>div>p {
   letter-spacing: 1px;
 }
-main #impact figure {
+main>#impact>figure {
   width: 60%;
 }
-main #impact figure img {
+main>#impact>figure>img {
   width: 100%;
 }
-main #man-eater {
+main>#man-eater {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -326,31 +336,32 @@ main #man-eater {
   padding: 2rem;
   justify-content: space-between;
   gap: 5rem;
+  scroll-snap-align: start end;
 }
-main #man-eater section:first-child {
+main>#man-eater>section:first-child {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   gap: 2rem;
   scroll-snap-align: none;
 }
-main #man-eater section:first-child figure{
+main>#man-eater>section:first-child>figure{
   width: 100%;
 }
-main #man-eater section:first-child figure img{
+main>#man-eater>section:first-child>figure>img{
   width: 100%;
 }
-main #man-eater section:first-child div{
+main>#man-eater>section:first-child>div{
   width: 45%;
 }
-main #man-eater #video{
+main>#man-eater>#video{
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   width: 100%;
 }
-form {
+form{
   display: flex;
   flex-direction: column;
   max-width: 50%;
@@ -362,23 +373,23 @@ form {
   border-radius: 25px;
 }
 
-form section {
+form>section {
   padding: 1rem;
 }
 
-form .input-group {
+form>.input-group {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
 }
-form .input-group-genre{
+form>.input-group-genre{
   padding: 0.5rem;
 
 }
-form .input-group-genre label{
+form>.input-group-genre>label{
   padding-right: 2rem;
 }
-form label{
+form>label{
   color: var(--couleur-principale-font);
 }
 form input,
@@ -392,29 +403,29 @@ form select {
   accent-color: var(--couleur-case);
 }
 
-form input:focus {
+form>input:focus {
   border: 3px solid var(--couleur-principale-font);
   outline: none;
 }
-form input:invalid {
+form>input:invalid {
   color: var(--couleur-invalide);
   border: 2px solid var(--couleur-invalid);
 }
 
-form input:invalid + .message-erreur {
+form>input:invalid + .message-erreur {
   display: block;
 }
-form input:valid {
+form>input:valid {
   color: var(--couleur-valid);
   border: 2px solid var(--couleur-valid);
 }
-form .btn-group{
+form>.btn-group{
   display: flex;
   padding: 1rem;
   gap: 16rem;
 }
 
-form .btn-group div input{
+form>.btn-group>div>input{
   padding: 1rem;
   padding-left: 4rem;
   padding-right: 4rem;
@@ -427,7 +438,7 @@ footer {
   justify-content: flex-start;
 }
 
-footer  h2{
+footer h2{
   color: #a1e9ff;
   padding: 2rem;
   padding-left: 0;
@@ -445,6 +456,7 @@ footer p{
   color: var(--couleur-footer);
   justify-content: center;
   display: flex;
+  padding-bottom: 1rem;
 }
 footer nav{
   padding: 4rem;
@@ -457,7 +469,20 @@ nav{
   display: flex;
   justify-content: center;
 }
-
+footer>#galerie-image{
+  display: flex;
+  width: 100%;
+  height: 20%;
+  flex-wrap: wrap;
+}
+footer>#galerie-image>.image-conteneur{
+ flex-basis: calc(100% / 7);
+}
+footer>#galerie-image>.image-conteneur>img{
+  height: 100%;
+  width: 100%;
+ object-fit: cover;
+ }
 /* Demander au prof si il y a un meilleur alternatif */
 .arrow {
   border: solid white;
