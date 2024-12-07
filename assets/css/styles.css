@@ -9,7 +9,7 @@
   --couleur-bgd-boite: hwb(194 66% 0% / 0.521);
   --couleur-accent: #009efa;
   --couleur-principal-font: #3a464d;
-  --couleur-border: #00b884;
+  --couleur-border: #00b837;
   --couleur-valid: #009efa;
   --couleur-invalid: rgb(204, 48, 0);
   --couleur-hover: #1d526b;
@@ -176,7 +176,7 @@ header {
 header>.hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.308), rgba(0, 0, 0, 0.5)),
     url("../image/GEERG_13.jpg");
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   background-position: 50% 10%;
   background-repeat: no-repeat;
@@ -361,6 +361,22 @@ main>#man-eater>#video{
   min-height: 100vh;
   width: 100%;
 }
+.btn-group button{
+  background-color: var(--couleur-border);
+  color: #ffffff;
+  padding: 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: var(--texte-md);
+  cursor: pointer;
+  transition: all 700ms;
+  font-family: var(--police-principale);
+}
+
+.btn-group button:hover{
+  background-color: #00611d;
+  padding: 3rem;
+}
 form{
   display: flex;
   flex-direction: column;
@@ -482,6 +498,27 @@ footer>#galerie-image>.image-conteneur>img{
   height: 100%;
   width: 100%;
  object-fit: cover;
+ }
+
+ .media>nav>ul{
+  display: flex;
+  padding-left: 0;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-height: 10vh;
+  gap: 0.5rem;
+ }
+ .media>nav>ul>li{
+  flex-basis: calc(100% / 3 - (0.5rem * 2 / 3));
+  padding: none;
+  height: 100%;
+ }
+ .media img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
  }
 /* Demander au prof si il y a un meilleur alternatif */
 .arrow {
